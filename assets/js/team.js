@@ -6,7 +6,7 @@ const TEAM = [
     experienceYears: 8,
     photo: "assets/images/team/nicky.jpg",
     bio: "Founder of CRIW. Precision fades, sharp beard work, and a perfectionist eye for detail. enjoys going for a run and spending time with my family",
-    specialties: ["Skin fades", "Beard sculpting", "Classic scissor cuts","Burst fades"],
+    specialties: ["Skin fades", "Beard sculpting", "Classic scissor cuts"],
   },
   {
     name: "Josh",
@@ -14,7 +14,7 @@ const TEAM = [
     experienceYears: 5,
     photo: "assets/images/team/josh.jpg",
     bio: "With around five years of experiance behind the chair, Josh has a real passion for creating sharp, detailed cuts. A classic taper being his signature style. having spent the last three years cutting in worcester, he's focused on perfecting his craft and delivering top quallity service to every client who sits in his chair. When hes not in the barbershop, you will find josh working on his golf swing, behind the decks DJ'ing or pottering about in his A3",
-    specialties: ["Textured crops", "Pompadours", "Restyles"],
+    specialties: ["Textured crops", "Taper fades", "curly hair textures"],
   },
   {
     name: "Dan",
@@ -22,7 +22,7 @@ const TEAM = [
     experienceYears: 11,
     photo: "assets/images/team/dan.jpg",
     bio: "Dan's been cutting hair for over 10 years and specializes in tapers, mullets, and cracking the occasional bad joke. He's also trained in mental health and suicide prevention with Here to Talk - always up for a proper chat and looking out for others. When he's not in the shop, you'll find him watching football (Up the Reds), gaming on PC, or spending time with his family - not necessarily in that order.",
-    specialties: ["Low fades", "Short back & sides", "Long hair trims"],
+    specialties: ["Low fades", "Short back & sides", "Long hair styles"],
   },
   {
     name: "Bart",

@@ -189,3 +189,34 @@ section {
   box-shadow:var(--shadow);
   min-height: 300px;
 }
+
+
+/* Accessibility skip link (hidden unless tabbed to) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  clip: auto;
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
