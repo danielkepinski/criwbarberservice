@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet the Team! - CRIW Barbershop</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/team.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Meet the Team!</h1>
+        <nav aria-label="Primary" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="meettheteam.html" aria-current="page">Meet the Team</a>
+          <a href="booking.html">Book Now</a>
+        </nav>
+      </div>
+      <div class="header-image">
+        <img src="assets/images/criw.jpg" width="120" height="120" alt="Barbershop pole" />
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="team-section">
+      <div class="container">
+        <h2>Our Barbers</h2>
+        <p class="lede">Click a barber to learn more.</p>
+        <div class="grid" id="team-grid" aria-label="Team members"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 CRIW Barbershop</p>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h2 id="modal-title" class="modal-title">Team Member</h2>
+        <button class="modal-close" id="modal-close" aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-photo"><img id="modal-photo" alt=""></div>
+        <div class="modal-content">
+          <div class="meta">
+            <span class="pill" id="modal-role">Role</span>
+            <span class="pill" id="modal-exp">Experience</span>
+          </div>
+
+          <div class="section-label">Bio</div>
+          <p class="bio" id="modal-bio"></p>
+
+          <div class="section-label">Specialties</div>
+          <p class="bio" id="modal-specs"></p>
+        </div>
+      </div>
+      <span class="sr-only" id="modal-start">Dialog start</span>
+      <span class="sr-only" id="modal-end" tabindex="0">Dialog end</span>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/team.js"></script>
+</body>
+</html>
