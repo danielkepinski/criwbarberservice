@@ -28,8 +28,11 @@
   <main id="main">
     <section class="booking-section">
       <div class="container embed-card">
-        <!-- Booksy widget: check your account’s official embed code; this URL removes the stray space -->
-        <script src="https://booksy.com/widget/code.js?if=72397&country=gb&lang=en-GB" type="text/javascript"></script>
+        <h2 class="text-xl font-bold text-brand mb-4">Book Your Appointment</h2>
+        <p>If the booking widget doesn’t load, you can <a href="https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester" target="_blank" rel="noopener" class="text-brand font-semibold underline">book directly on Booksy</a>.</p>
+
+        <!-- Placeholder container for the widget -->
+        <div id="booksy-widget" style="margin-top: 20px;"></div>
       </div>
     </section>
   </main>
@@ -39,5 +42,15 @@
       <p>&copy; 2025 Criw Barbershop</p>
     </div>
   </footer>
+
+  <!-- Load Booksy script once, safely -->
+  <script type="text/javascript">
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://booksy.com/widget/code.js?id=72397&country=gb&lang=en-GB';
+      s.async = true;
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
