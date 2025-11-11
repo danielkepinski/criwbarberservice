@@ -225,6 +225,8 @@ section {
 /* ===== Mobile nav (burger) ===== */
 .menu-toggle{
   display: none; /* shown on small screens */
+  position: relative;
+  z-index: 1001;
   align-items: center;
   justify-content: center;
   gap: 6px;
