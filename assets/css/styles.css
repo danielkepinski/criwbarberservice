@@ -6,6 +6,7 @@
   --muted: #6b6b6b;
   --card: #ffffff;
   --shadow: 0 8px 24px rgba(0,0,0,.08);
+  --header-height: 72px;
 }
 
 /* ============ Base ============ */
@@ -29,6 +30,9 @@ img { max-width: 100%; height: auto; display: block; }
 .site-header {
   background: var(--bg);
   border-bottom: 1px solid rgba(0,0,0,.06);
+  position: sticky;
+  top: 0;
+  z-index: 1200;
 }
 
 .header-inner {
@@ -37,6 +41,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   gap: 16px;
   padding: 18px 0;
+  min-height: var(--header-h);
 }
 
 .brand h1 {
@@ -252,7 +257,9 @@ section {
   .site-nav{
     display: none !important;          /* hidden by default on mobile */
     position: absolute;
-    left: 0; right: 0; top: 100%;
+    left: 0; 
+    right: 0; 
+    top: var(--header-h); 
     background: var(--bg);
     border-bottom: 1px solid rgba(0,0,0,.06);
     box-shadow: 0 8px 20px rgba(0,0,0,.06);
@@ -260,6 +267,8 @@ section {
     z-index: 1000;
     flex-direction: column;
     gap: 6px;
+    max-height: calc(100dvh - var(--header-h));
+    overflow: auto;                   /* scroll menu if tall */
   }
 
   /* OPEN state (toggled directly on the nav) */
@@ -276,9 +285,11 @@ section {
 .menu-toggle { position: relative; z-index: 1001; }
 .header-inner {
   display: grid;
+  position: relative;
   grid-template-columns: auto 1fr; /* image on left, text/nav on right */
   align-items: center;
   gap: 16px;
   padding: 18px 0;
 }
 
+body.nav-open { overflow: hidden; }

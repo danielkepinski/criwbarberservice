@@ -8,13 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openNav() {
     header.classList.add("nav-open");
-    nav.classList.add(OPEN_CLASS); // <-- directly open the nav
+    nav.classList.add("is-open");
+    document.body.classList.add("nav-open"); // NEW
     btn.setAttribute("aria-expanded", "true");
     btn.setAttribute("aria-label", "Close menu");
   }
   function closeNav() {
     header.classList.remove("nav-open");
-    nav.classList.remove(OPEN_CLASS); // <-- directly close the nav
+    nav.classList.remove("is-open");
+    document.body.classList.remove("nav-open"); // NEW
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-label", "Open menu");
   }
