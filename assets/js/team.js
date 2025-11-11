@@ -7,6 +7,8 @@ const TEAM = [
     photo: "assets/images/team/nicky.jpg",
     bio: "Founder of CRIW. Precision fades, sharp beard work, and a perfectionist eye for detail. enjoys going for a run and spending time with my family",
     specialties: ["Skin fades", "Beard sculpting", "Classic scissor cuts"],
+    bookingUrl:
+      "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
   },
   {
     name: "Josh",
@@ -15,6 +17,8 @@ const TEAM = [
     photo: "assets/images/team/josh.jpg",
     bio: "With around five years of experiance behind the chair, Josh has a real passion for creating sharp, detailed cuts. A classic taper being his signature style. having spent the last three years cutting in worcester, he's focused on perfecting his craft and delivering top quallity service to every client who sits in his chair. When hes not in the barbershop, you will find josh working on his golf swing, behind the decks DJ'ing or pottering about in his A3",
     specialties: ["Textured crops", "Taper fades", "curly hair textures"],
+    bookingUrl:
+      "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
   },
   {
     name: "Dan",
@@ -23,6 +27,8 @@ const TEAM = [
     photo: "assets/images/team/dan.jpg",
     bio: "Dan's been cutting hair for over 10 years and specializes in tapers, mullets, and cracking the occasional bad joke. He's also trained in mental health and suicide prevention with Here to Talk - always up for a proper chat and looking out for others. When he's not in the shop, you'll find him watching football (Up the Reds), gaming on PC, or spending time with his family - not necessarily in that order.",
     specialties: ["Low fades", "Short back & sides", "Long hair styles"],
+    bookingUrl:
+      "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
   },
   {
     name: "Bart",
@@ -31,6 +37,8 @@ const TEAM = [
     photo: "assets/images/team/bart.jpg",
     bio: "Bart's been barbering since 2004 and his passion for the craft really shows. He's known for his precision cuts, clean fades, and styles tailored perfectly to each client. With great attention to detail and a friendly, consistent approach, Bart always delivers top-quality service. Outside the shop, he's a family man who loves skiing, football, and relaxing with some PC gaming.",
     specialties: ["Classic cuts", "Side parts", "Beard line-ups"],
+    bookingUrl:
+      "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
   },
 ];
 
