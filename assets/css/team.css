@@ -160,3 +160,19 @@ body.modal-open {
   height: 100dvh;         /* mobile-friendly viewport */
   touch-action: none;
 }
+
+.modal-backdrop {
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.modal-backdrop.open { opacity: 1; }
+.modal {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.modal-backdrop.open .modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
