@@ -1,9 +1,12 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const btn = document.querySelector(".menu-toggle");
   const nav = document.getElementById("primary-nav");
 
-  if (!header || !btn || !nav) return;
+  if (!header || !btn || !nav) {
+    console.warn("[nav] Missing .site-header, .menu-toggle, or #primary-nav");
+    return;
+  }
 
   function openNav() {
     header.classList.add("nav-open");
@@ -18,16 +21,14 @@
   }
 
   function toggleNav() {
-    const expanded = btn.getAttribute("aria-expanded") === "true";
-    expanded ? closeNav() : openNav();
+    btn.getAttribute("aria-expanded") === "true" ? closeNav() : openNav();
   }
 
   btn.addEventListener("click", toggleNav);
 
   // Close when a nav link is clicked
   nav.addEventListener("click", (e) => {
-    const link = e.target.closest("a");
-    if (link) closeNav();
+    if (e.target.closest("a")) closeNav();
   });
 
   // Close on Escape
@@ -35,18 +36,17 @@
     if (e.key === "Escape") closeNav();
   });
 
-  // Close if clicking outside the nav on mobile
+  // Close if clicking outside the header when open
   document.addEventListener("click", (e) => {
-    if (!header.classList.contains("nav-open")) return;
-    const inside = header.contains(e.target);
-    if (!inside) closeNav();
+    if (header.classList.contains("nav-open") && !header.contains(e.target))
+      closeNav();
   });
 
-  // If resizing to desktop, ensure menu is closed/reset
+  // Reset when resizing up to desktop
   let lastW = window.innerWidth;
   window.addEventListener("resize", () => {
     const w = window.innerWidth;
     if (lastW <= 760 && w > 760) closeNav();
     lastW = w;
   });
-})();
+});
