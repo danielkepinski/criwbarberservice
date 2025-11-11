@@ -243,11 +243,13 @@ section {
 
 .menu-toggle .icon-close{ display: none; }
 
+
 /* Mobile layout */
 @media (max-width: 760px){
   .menu-toggle{ display: inline-flex; }
+
   .site-nav{
-    display: none;           /* hidden by default on mobile */
+    display: none !important;          /* hidden by default on mobile */
     position: absolute;
     left: 0; right: 0; top: 100%;
     background: var(--bg);
@@ -258,16 +260,18 @@ section {
     flex-direction: column;
     gap: 6px;
   }
-  .site-nav a{
-    padding: 10px 12px;
-    border-radius: 10px;
-  }
-  /* When nav is open */
-  .site-header.nav-open .site-nav{ display: flex; }
+
+  /* OPEN state (toggled directly on the nav) */
+  .site-nav.is-open{ display: flex !important; }
+
+  .site-nav a{ padding: 10px 12px; border-radius: 10px; }
+
+  /* Icon swap */
   .site-header.nav-open .menu-toggle .icon-burger{ display: none; }
   .site-header.nav-open .menu-toggle .icon-close{ display: block; }
-  .site-header.nav-open .menu-toggle[aria-expanded="true"]{ background: rgba(206,16,24,.08); }
 }
 
-/* Prevent layout jump when absolute menu appears */
-.header-inner{ position: relative; }
+/* Make sure menu button is always clickable */
+.menu-toggle { position: relative; z-index: 1001; }
+.header-inner { position: relative; }
+
