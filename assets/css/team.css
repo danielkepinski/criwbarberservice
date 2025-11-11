@@ -114,3 +114,49 @@ p.lede { margin: 0 0 20px; opacity: .8; }
   outline: 2px solid #fff;
   outline-offset: 3px;
 }
+
+/* Backdrop must sit above header/burger; cover whole screen */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: none;            /* toggled to flex */
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10000;           /* higher than header/nav */
+}
+
+/* When open */
+.modal-backdrop.open { display: flex; }
+
+/* Modal should scroll internally on small screens */
+.modal {
+  width: min(720px, 96%);
+  max-height: 90vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0,0,0,.3);
+}
+
+/* Bigger, easier-to-tap close button */
+.modal-close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.8rem;      /* larger tap target */
+  line-height: 1;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 10px;
+  touch-action: manipulation;
+}
+
+/* Prevent background page from scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+  height: 100dvh;         /* mobile-friendly viewport */
+  touch-action: none;
+}

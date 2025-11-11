@@ -25,7 +25,7 @@ const TEAM = [
     role: "Barber",
     experienceYears: 11,
     photo: "assets/images/team/dan.jpg",
-    bio: "Dan's been cutting hair for over 10 years and specializes in tapers, mullets, and cracking the occasional bad joke. He's also trained in mental health and suicide prevention with Here to Talk - always up for a proper chat and looking out for others. When he's not in the shop, you'll find him watching football (Up the Reds), gaming on PC, or spending time with his family - not necessarily in that order.",
+    bio: "Dan's been cutting hair for over 10 years and specializes in tapers, mullets, and cracking the occasional bad joke. He's also trained in mental health and suicide prevention with Here to Talk - always up for a proper chat and looking out for others. When he's not in the shop, you'll find him watching football (Up the Reds), gaming on PC, or spending time with his family - not necessarily in that order.",
     specialties: ["Low fades", "Short back & sides", "Long hair styles"],
     bookingUrl:
       "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
@@ -35,7 +35,7 @@ const TEAM = [
     role: "Barber",
     experienceYears: 21,
     photo: "assets/images/team/bart.jpg",
-    bio: "Bart's been barbering since 2004 and his passion for the craft really shows. He's known for his precision cuts, clean fades, and styles tailored perfectly to each client. With great attention to detail and a friendly, consistent approach, Bart always delivers top-quality service. Outside the shop, he's a family man who loves skiing, football, and relaxing with some PC gaming.",
+    bio: "Bart's been barbering since 2004 and his passion for the craft really shows. He's known for his precision cuts, clean fades, and styles tailored perfectly to each client. With great attention to detail and a friendly, consistent approach, Bart always delivers top-quality service. Outside the shop, he's a family man who loves skiing, football, and relaxing with some PC gaming.",
     specialties: ["Classic cuts", "Side parts", "Beard line-ups"],
     bookingUrl:
       "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
@@ -87,15 +87,32 @@ function openModal(idx) {
   photoEl.src = p.photo;
   photoEl.alt = `${p.name} — ${p.role}`;
 
+  // Remove any previous "Book with me" button
+  const existingBtn = document.querySelector(".booking-link");
+  if (existingBtn) existingBtn.remove();
+
+  // Add booking button if URL is present
+  if (p.bookingUrl) {
+    const btn = document.createElement("a");
+    btn.href = p.bookingUrl;
+    btn.target = "_blank";
+    btn.rel = "noopener";
+    btn.className = "booking-link";
+    btn.textContent = `Book with ${p.name}`;
+    document.querySelector(".modal-content").appendChild(btn);
+  }
+
   lastFocus = document.activeElement;
   backdrop.classList.add("open");
   backdrop.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open"); // lock background scroll on mobile
   closeBtn.focus();
 }
 
 function closeModal() {
   backdrop.classList.remove("open");
   backdrop.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open"); // unlock background scroll
   if (lastFocus) lastFocus.focus();
 }
 
@@ -116,9 +133,25 @@ grid.addEventListener("keydown", (e) => {
 
 // Close actions
 closeBtn.addEventListener("click", closeModal);
+
+// Mobile-safe backdrop close: click OR tap outside modal
 backdrop.addEventListener("click", (e) => {
-  if (e.target === backdrop) closeModal();
+  const modalEl = document.querySelector(".modal");
+  if (e.target === backdrop || !modalEl.contains(e.target)) closeModal();
 });
+backdrop.addEventListener(
+  "touchstart",
+  (e) => {
+    const modalEl = document.querySelector(".modal");
+    if (e.target === backdrop || !modalEl.contains(e.target)) {
+      e.preventDefault(); // avoid ghost clicks
+      closeModal();
+    }
+  },
+  { passive: true }
+);
+
+// Escape key closes modal
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && backdrop.classList.contains("open")) closeModal();
 });
