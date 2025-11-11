@@ -155,11 +155,12 @@ section {
 /* ============ Small screens tweaks ============ */
 @media (max-width: 640px) {
   .header-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;      /* single column */
     text-align: center;
   }
   .header-image {
-    margin: 8px auto 0;
+    order: -1;                       /* move image above brand */
+    margin-bottom: 10px;
   }
   .hours-list li {
     padding: 10px 12px;
@@ -273,5 +274,11 @@ section {
 
 /* Make sure menu button is always clickable */
 .menu-toggle { position: relative; z-index: 1001; }
-.header-inner { position: relative; }
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr; /* image on left, text/nav on right */
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+}
 
