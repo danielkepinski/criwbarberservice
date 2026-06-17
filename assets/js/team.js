@@ -31,26 +31,42 @@ const TEAM = [
       "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
   },
   {
-    name: "Bart",
+    name: "Tyler",
     role: "Barber",
-    experienceYears: 21,
-    photo: "assets/images/team/bart.jpg",
-    bio: "Bart's been barbering since 2004 and his passion for the craft really shows. He's known for his precision cuts, clean fades, and styles tailored perfectly to each client. With great attention to detail and a friendly, consistent approach, Bart always delivers top-quality service. Outside the shop, he's a family man who loves skiing, football, and relaxing with some PC gaming.",
-    specialties: ["Classic cuts", "Side parts", "Beard line-ups"],
-    bookingUrl:
-      "https://booksy.com/en-gb/72397_criw-barber-service_barber_1341496_worcester",
+    photo: "assets/images/team/tyler.jpg",
+    bio: "Bio coming soon.",
+    specialties: ["Details coming soon"],
+  },
+  {
+    name: "Harrison",
+    role: "Barber",
+    photo: "assets/images/team/harrison.webp",
+    bio: "Bio coming soon.",
+    specialties: ["Details coming soon"],
   },
 ];
 
 // ==== Build grid ====
 const grid = document.getElementById("team-grid");
+const getInitials = (name) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
 grid.innerHTML = TEAM.map(
   (p, i) => `
   <article class="card"
     tabindex="0"
     data-index="${i}"
     aria-label="${p.name}, ${p.role}">
-    <img src="${p.photo}" alt="${p.name} — ${p.role}">
+    ${
+      p.photo
+        ? `<img src="${p.photo}" alt="${p.name} — ${p.role}">`
+        : `<div class="card-placeholder" aria-hidden="true">${getInitials(p.name)}</div>`
+    }
     <div class="info">
       <div>
         <div class="name">${p.name}</div>
@@ -74,6 +90,7 @@ const expEl = document.getElementById("modal-exp");
 const bioEl = document.getElementById("modal-bio");
 const specsEl = document.getElementById("modal-specs");
 const endTrap = document.getElementById("modal-end");
+const photoWrap = photoEl.closest(".modal-photo");
 
 let lastFocus = null;
 
@@ -81,11 +98,25 @@ function openModal(idx) {
   const p = TEAM[idx];
   titleEl.textContent = p.name;
   roleEl.textContent = p.role;
-  expEl.textContent = `Experience: ${p.experienceYears} yrs`;
+  expEl.textContent = p.experienceYears
+    ? `Experience: ${p.experienceYears} yrs`
+    : "Experience: Coming soon";
   bioEl.textContent = p.bio;
   specsEl.textContent = p.specialties.join(" • ");
-  photoEl.src = p.photo;
-  photoEl.alt = `${p.name} — ${p.role}`;
+
+  if (p.photo) {
+    photoWrap.classList.remove("is-placeholder");
+    photoWrap.removeAttribute("data-initials");
+    photoEl.hidden = false;
+    photoEl.src = p.photo;
+    photoEl.alt = `${p.name} — ${p.role}`;
+  } else {
+    photoWrap.classList.add("is-placeholder");
+    photoWrap.dataset.initials = getInitials(p.name);
+    photoEl.hidden = true;
+    photoEl.removeAttribute("src");
+    photoEl.alt = "";
+  }
 
   // Remove any previous "Book with me" button
   const existingBtn = document.querySelector(".booking-link");

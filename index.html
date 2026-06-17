@@ -8,85 +8,103 @@
 </head>
 <body>
   <header class="site-header">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="container header-inner">
-    <div class="header-image">
-      <img src="assets/images/criw.jpg" width="120" height="120" alt="Brand logo" />
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="container header-inner">
+      <div class="header-image">
+        <img src="assets/images/criw.jpg" width="120" height="120" alt="CRIW Barbershop logo" />
+      </div>
+      <div class="brand">
+        <h1>Criw Barbershop</h1>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu" type="button">
+          <svg class="icon-burger" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav id="primary-nav" aria-label="Primary" class="site-nav">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="meettheteam.html">Meet the Team</a>
+          <a href="booking.html">Book Now</a>
+        </nav>
+      </div>
     </div>
-    <div class="brand">
-      <h1>Criw Barbershop</h1>
-
-      <!-- Burger button -->
-      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu" type="button">
-        <svg class="icon-burger" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <nav id="primary-nav" aria-label="Primary" class="site-nav">
-        <a href="index.html"aria-current="page">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="meettheteam.html">Meet the Team</a>
-        <a href="booking.html">Book Now</a>
-      </nav>
-    </div>
-
-  
-</header>
+  </header>
 
 
-  <main>
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <h2>Your Style, Our Craft</h2>
-        <p>Experience the art of barbering at Criw Barbershop.</p>
+  <main id="main">
+    <section class="home-hero" aria-label="CRIW Barbershop on Trinity Street">
+      <div class="home-hero__image" aria-hidden="true"></div>
+      <div class="home-hero__shade"></div>
+      <div class="container home-hero__content">
+        <p class="eyebrow">Worcester barber service</p>
+        <h2>Sharp cuts, easy chat, proper care.</h2>
+        <p class="hero-copy">
+          A relaxed barbershop for clean fades, classic cuts, beard work, and the kind of appointment you actually look forward to.
+        </p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button button-primary" href="booking.html">Book now</a>
+          <a class="button button-secondary" href="meettheteam.html">Meet the barbers</a>
+        </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="about">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>
-          At Criw Barbershop, we believe in the power of a great haircut to transform not just
-          your look, but your confidence and spirit. Our team of skilled barbers is dedicated to
-          providing you with an exceptional grooming experience, tailored to your unique style and personality.
-        </p>
-        <p>
-          We pride ourselves on our attention to detail, using only the finest products and techniques.
-          By blending heritage methods with modern precision, our traditional barbershop is more than just
-          a place for a haircut—it's a cornerstone of community, where stories are shared and friendships are built.
-        </p>
-        <p>
-          At Criw Barbershop, we honor the timeless rituals and craftsmanship of classic barbering while
-          embracing modern values of inclusivity, style, and customer care.
-        </p>
+    <section class="quick-info" aria-label="Shop highlights">
+      <div class="container quick-info__grid">
+        <div>
+          <span>Central Worcester</span>
+          <strong>2-4 Trinity Street</strong>
+        </div>
+        <div>
+          <span>Open late</span>
+          <strong>Until 7pm Thu-Fri</strong>
+        </div>
+        <div>
+          <span>Book online</span>
+          <strong>Fast Booksy appointments</strong>
+        </div>
       </div>
     </section>
 
-    <!-- Hours -->
-    <section class="hours">
-      <div class="container">
-        <h2>Opening Hours</h2>
-        <ul class="hours-list">
-          <li><span>Mon–Wed</span> <strong>9:00–18:00</strong></li>
-          <li><span>Thu–Fri</span> <strong>9:00–19:00</strong></li>
-          <li><span>Saturday</span> <strong>8:00–15:00</strong></li>
-          <li><span>Sunday</span> <strong>Closed</strong></li>
-        </ul>
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <p class="eyebrow">Inside CRIW</p>
+          <h2>A barbershop with a bit of life in it.</h2>
+          <p>
+            We keep things welcoming, detailed, and unpretentious. Come in for a tidy-up, a full restyle, a skin fade, or a beard shape, and leave feeling sorted.
+          </p>
+          <p>
+            The team brings classic barbering, modern technique, and proper conversation together in a shop that feels local because it is.
+          </p>
+        </div>
+        <div class="intro-photo">
+          <img src="assets/images/allcutting.jpg" alt="CRIW barbers cutting hair inside the Worcester shop" />
+        </div>
       </div>
     </section>
 
-    <!-- Location -->
-    <section class="location">
-      <div class="container">
-        <h2>Location</h2>
-        <p>2–4 Trinity Street, Worcester, WR1 2PW</p>
-        <p><a class="tel" href="tel:01905724715">01905 724715</a></p>
+    <section class="visit-section">
+      <div class="container visit-grid">
+        <div class="visit-panel">
+          <h2>Opening Hours</h2>
+          <ul class="hours-list">
+            <li><span>Mon-Wed</span> <strong>9:00-18:00</strong></li>
+            <li><span>Thu-Fri</span> <strong>9:00-19:00</strong></li>
+            <li><span>Saturday</span> <strong>8:00-15:00</strong></li>
+            <li><span>Sunday</span> <strong>Closed</strong></li>
+          </ul>
+        </div>
+        <div class="visit-panel visit-panel--dark">
+          <h2>Find Us</h2>
+          <p>2-4 Trinity Street, Worcester, WR1 2PW</p>
+          <p><a class="tel" href="tel:01905724715">01905 724715</a></p>
+          <a class="button button-light" href="https://www.google.com/maps/search/?api=1&query=2-4%20Trinity%20Street%2C%20Worcester%2C%20WR1%202PW">Get directions</a>
+        </div>
       </div>
     </section>
   </main>
@@ -99,5 +117,4 @@
   <script src="assets/js/nav.js"></script>
 </body>
 </html>
-
 

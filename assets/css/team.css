@@ -34,6 +34,19 @@ p.lede { margin: 0 0 20px; opacity: .8; }
 .card img {
   width: 100%; height: 280px; object-fit: cover; display:block;
 }
+.card-placeholder {
+  width: 100%;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(206,16,24,.12), rgba(34,34,34,.08)),
+    #f4f1e8;
+  color: var(--accent);
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0;
+}
 .card .info {
   padding: 12px 14px;
   display: flex; align-items: center; justify-content: space-between;
@@ -83,6 +96,20 @@ p.lede { margin: 0 0 20px; opacity: .8; }
 
 .modal-photo { min-height: 260px; background: #eee; }
 .modal-photo img { width: 100%; height: 100%; object-fit: cover; display:block; }
+.modal-photo.is-placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(206,16,24,.14), rgba(34,34,34,.08)),
+    #f4f1e8;
+}
+.modal-photo.is-placeholder::before {
+  content: attr(data-initials);
+  color: var(--accent);
+  font-size: clamp(3rem, 12vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0;
+}
 
 .modal-content { padding: 18px; }
 .meta { display:flex; gap: 14px; flex-wrap: wrap; margin: 8px 0 14px; }
@@ -175,4 +202,3 @@ body.modal-open {
   transform: translateY(0);
   opacity: 1;
 }
-
